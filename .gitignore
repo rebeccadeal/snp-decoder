@@ -2,6 +2,7 @@
 # Completely seals the raw inputs folder. Anything dropped
 # inside raw_dna/ can never be tracked or uploaded.
 raw_dna/
+data/processed/
 
 # === Python / Environment Overrides ===
 .venv/

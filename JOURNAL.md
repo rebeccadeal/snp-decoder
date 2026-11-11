@@ -1,6 +1,6 @@
 # Development Log & Architectural Decisions
 
-## Phase 1: Project Initialization & Privacy Controls (Nov 10, 2026)
+## Phase 1: Project Initialization & Privacy Controls (Nov 10 2026)
 * **Core Stack Selected:** Streamlit (Python prototyping frontend) + Power BI Desktop (Local BI 
   engineering layer).
 * **Infrastructure Strategy:** Opted for a single-repository architecture connected to Streamlit 
@@ -10,7 +10,7 @@
   FamilyTreeDNA profiles remain localized and never leak to the public cloud, mirroring enterprise 
   HIPAA data integrity expectations.
 
-## Phase 2: Schema Audit & Flat File Parsing (Nov 10, 2026)
+## Phase 2: Schema Audit & Flat File Parsing (Nov 10 2026)
 * **Data Footprint Discovered:** Verified that the AncestryDNA files utilize a standard 5-column 
   schema (`rsid`, `chromosome`, `position`, `allele1`, `allele2`) separated by raw TAB delimiters.
 * **Reference Genome Verification:** Explicitly audited the vendor file comments and confirmed that 
@@ -21,4 +21,14 @@
   uniform 2-character genotype strings, and automatically normalizes missing variant call fields.
 * **Compliance Protocol Executed:** Integrated a clinical-style string filter (`profile_id`) 
   during ingestion to immediately decouple biological data rows from personal family nomenclature.
+
+## Phase 3: Streamlit MVP Launch & UI Verification (Nov 10 2026)
+* **Frontend Architecture Deployed:** Built and launched `app/main.py` locally using Streamlit to 
+  orchestrate raw file discovery, batch ingestion, and real-time schema validation across three 
+  de-identified AncestryDNA profiles (`Subject-01` through `Subject-03`).
+* **End-to-End Pipeline Verified:** Successfully processed and harmonized over two million combined 
+  SNP records into a single unified CSV artifact (`data/processed/mvp_harmonized_snps.csv`) ready 
+  for downstream Power BI modeling.
+* **Code Maintenance:** Audited runtime console logs and migrated `st.dataframe` layout parameters 
+  from deprecated `use_container_width=True` syntax to the modern `width="stretch"` standard.
 
