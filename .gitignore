@@ -1,0 +1,15 @@
+# === CRITICAL HEALTHCARE PRIVACY GUARDS ===
+# Strictly block all raw genomic data from tracking
+raw_dna/
+*.txt
+*.csv
+*.xlsx
+*.zip
+
+# === Python / Environment Overrides ===
+.venv/
+env/
+__pycache__/
+*.pyc
+.DS_Store
+
